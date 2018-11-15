@@ -1,39 +1,40 @@
 var chocolateBars = ["snickers", "hundred grand", "kitkat", "skittles"];
 
-function addElementToBeginningOfArray(arrayOne,element){
-  return [element, ...arrayOne];
+function addElementToBeginningOfArray(originalArray, newElement){
+  return [newElement,...originalArray];
+}
+function destructivelyAddElementToBeginningOfArray(originalArray, newElement) {
+  originalArray.unshift(newElement);
+  return originalArray;
 }
 
-function destructivelyAddElementToBeginningOfArray(arrayOne,element){
-  arrayOne.unshift(element);
-  return arrayOne;
-}
-function addElementToEndOfArray(arrayOne, element){
-  return [...arrayOne, element];
-}
-function destructivelyAddElementToEndOfArray(arrayOne, element){
-  arrayOne.push(element);
-  return arrayOne;
-}
-function accessElementInArray(arrayOne, index){
-  return arrayOne[index];
-}
-function removeElementFromBeginningOfArray(arrayOne){
-  return arrayOne.slice(1);
-}
-function destructivelyRemoveElementFromBeginningOfArray(arrayOne){
-  arrayOne.shift()
-  return arrayOne;
-}
-function destructivelyRemoveElementFromEndOfArray(arrayOne){
-  arrayOne.pop();
-  return arrayOne
+function addElementToEndOfArray(originalArray, newElement) {
+  return [...originalArray, newElement];
 }
 
-
-function removeElementFromEndOfArray(arrayOne){
-    return arrayOne.slice(0, 
-    arrayOne.length -1);
-    
+function destructivelyAddElementToEndOfArray(originalArray, newElement) {
+  originalArray.push(newElement);
+  return originalArray;
 }
 
+function accessElementInArray(originalArray, index) {
+  return originalArray[index];
+}
+
+function destructivelyRemoveElementFromBeginningOfArray(originalArray)  {
+  originalArray.shift();
+  return originalArray;
+}
+
+function removeElementFromBeginningOfArray(originalArray) {
+  return originalArray.slice(1);
+}
+
+function destructivelyRemoveElementFromEndOfArray(originalArray) {
+  originalArray.pop();
+  return originalArray;
+}
+
+function removeElementFromEndOfArray(originalArray) {
+  return originalArray.slice(0, originalArray.length-1)
+}
